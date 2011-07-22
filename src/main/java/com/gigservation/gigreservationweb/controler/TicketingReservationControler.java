@@ -45,21 +45,18 @@ public class TicketingReservationControler {
     }
 
     @RequestMapping("/searchTicketings")
-    public String searchTicketings(@RequestParam("input1") String name, Model model) {
+    public String searchTicketings(@RequestParam("bandName") String name, Model model) {
 
         List<Ticketing> ticketings = ticketOrderService.searchTicketingsByBand(name.trim());
         model.addAttribute("ticketings", ticketings);
-
-
         return "ticketings";
     }
 
-    @RequestMapping("/{name}")
-    public String displayTicketingById(@PathVariable String name, Model model) {
+    @RequestMapping(value="/gigs/{bandName}", method=RequestMethod.GET)
+    public String searchTicketingsByName(@PathVariable String bandName, Model model) {
 
-        List<Ticketing> ticketings = ticketOrderService.searchTicketingsByBand(name.trim());
+        List<Ticketing> ticketings = ticketOrderService.searchTicketingsByBand(bandName.trim());
         model.addAttribute("ticketings", ticketings);
-
         return "ticketings";
     }
 
