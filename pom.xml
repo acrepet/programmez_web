@@ -52,13 +52,13 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>3.1.0.M1</version>
+            <version>${spring.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>3.1.0.M1</version>
+            <version>${spring.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -82,7 +82,8 @@
         </plugins>
         <finalName>GigReservationWeb</finalName>
     </build>
+    
     <properties>
-        <netbeans.hint.deploy.server>Tomcat60</netbeans.hint.deploy.server>
+    	<spring.version>3.1.0.M2</spring.version>
     </properties>
 </project>
